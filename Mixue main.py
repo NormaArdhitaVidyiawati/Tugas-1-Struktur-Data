@@ -56,4 +56,39 @@ print(
 pesanan = int(input("Silahkan memesan dari menu (input nomer): "))
 daftar_pesanan.tambahkan_pesanan(MENU[pesanan - 1][0], MENU[pesanan - 1][1])
 
+while True:
+
+    pesanan = input("apakah anda ingin memesan lagi? (y/t):")
+
+    if pesanan == "y":
+
+        pesanan = int(input("Silahkan memesan dari menu (input nomer): "))
+
+        daftar_pesanan.tambahkan_pesanan(MENU[pesanan - 1][0], MENU[pesanan - 1][1])
+
+
+
+    elif pesanan == "t":
+
+        break
+
+
+
+    else:
+
+        print("Input salah, silahkan ulangi lagi")
+
+
+
+
+
+    pesanan = int(pesanan)
+
+    daftar_pesanan.tambahkan_pesanan(MENU[pesanan - 1][0], MENU[pesanan - 1][1])
+
+
+
+daftar_pesanan.print()
+
+daftar_pesanan.total_pesanan()
 
