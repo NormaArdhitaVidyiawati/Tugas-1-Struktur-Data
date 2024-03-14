@@ -31,4 +31,29 @@ class DaftarPesanan:
             print(f"{pesanan.nama_menu}: {pesanan.harga}")
             pesanan = pesanan.next
         
-       
+      def total_pesanan(self):
+        total = 0
+        
+        pesanan = self.head
+        while pesanan:
+            total += pesanan.harga
+            pesanan = pesanan.next
+        
+        print(f"Total Harga Pesanan: Rp{total}")
+
+daftar_pesanan = DaftarPesanan()
+
+MENU = [["Mixue Ice Cream", 5_000], ["Boba Shake", 16_000], ["Mie Sundae", 14_000], ["Mie Ganas", 11_000], ["Creamy Manggo Boba", 22_000]]
+
+print(
+"""
+1. Mixue Ice Cream:     Rp.5.000
+2. Boba Shake:          Rp.16.000
+3. Mie Sundae:          Rp.14.000
+4. Mie Ganas:           Rp.11.000
+5. Creamy Mango Boba:   Rp.22.000
+""")
+pesanan = int(input("Silahkan memesan dari menu (input nomer): "))
+daftar_pesanan.tambahkan_pesanan(MENU[pesanan - 1][0], MENU[pesanan - 1][1])
+
+
